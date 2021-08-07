@@ -16,5 +16,6 @@ defmodule Simuse.Accounts.User do
     user
     |> cast(attrs, [:username, :first_name, :last_name, :age])
     |> validate_required([:username, :first_name, :last_name, :age])
+    |> unique_constraint(:username)
   end
 end

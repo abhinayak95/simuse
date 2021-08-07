@@ -5,6 +5,7 @@ defmodule Simuse.Accounts do
 
   import Ecto.Query, warn: false
   alias Simuse.Repo
+  # alias Simuse.CacheRepo, as: Repo
 
   alias Simuse.Accounts.User
 

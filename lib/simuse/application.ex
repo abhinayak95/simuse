@@ -9,6 +9,7 @@ defmodule Simuse.Application do
     children = [
       # Start the Ecto repository
       Simuse.Repo,
+      Simuse.CacheRepo,
       # Start the Telemetry supervisor
       SimuseWeb.Telemetry,
       # Start the PubSub system

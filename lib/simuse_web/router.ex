@@ -13,11 +13,17 @@ defmodule SimuseWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", SimuseWeb do
+    pipe_through :api
+
+    resources "/users", Api.UserController, except: [:new, :edit], as: :api_user
+  end
+
   scope "/", SimuseWeb do
     pipe_through :browser
 
-    resources "/users", UserController
-    
+    resources "/users", UserController, as: :user
+
     get "/", PageController, :index
   end
 
