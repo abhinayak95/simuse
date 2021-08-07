@@ -16,6 +16,8 @@ defmodule SimuseWeb.Router do
   scope "/", SimuseWeb do
     pipe_through :browser
 
+    resources "/users", UserController
+    
     get "/", PageController, :index
   end
 
